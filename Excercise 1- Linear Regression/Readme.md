@@ -1,5 +1,5 @@
 # Linear Regression
-The file ex1data1.txt contains the dataset for our linear regression problem. The first column is the population of a city and the second column is the profit of a food truck in that city. A negative value for profit indicates a loss.
+The file [ex1data1.txt](https://github.com/sanket1012/Coursera-Machine-Learning/blob/master/Excercise%201-%20Linear%20Regression/ex1data1.txt) contains the dataset for our linear regression problem. The first column is the population of a city and the second column is the profit of a food truck in that city. A negative value for profit indicates a loss.
 
 First Load the data and plot it to have a visualisation abaout the data:
     
