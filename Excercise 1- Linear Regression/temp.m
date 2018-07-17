@@ -1,1 +1,0 @@
-%     theta=theta-(alpha/m)*(h_theta-y)*X';
