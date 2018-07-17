@@ -106,3 +106,7 @@ predict():
       p = zeros(m, 1);
       
     end
+    
+sigmoid():
+
+
