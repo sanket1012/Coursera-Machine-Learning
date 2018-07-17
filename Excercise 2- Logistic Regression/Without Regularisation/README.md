@@ -1,6 +1,6 @@
 # Logistic Regression Without Regularisation
 
-In this part of the exercise, you will build a logistic regression model to predict whether a student gets admitted into a university. Suppose that you are the administrator of a university department and you want to determine each applicant's chance of admission based on their results on two exams. You have historical data [**ex2data1.txt**](https://github.com/sanket1012/Coursera-Machine-Learning/blob/master/Excercise%202-%20Logistic%20Regression/ex2data1.txt) from previous applicants that you can use as a training set for logistic regression. For each training example, you have the applicant's scores on two exams and the admissions decision.
+In this part of the Machine Learning, you will build a logistic regression model to predict whether a student gets admitted into a university. Suppose that you are the administrator of a university department and you want to determine each applicant's chance of admission based on their results on two exams. You have historical data [**ex2data1.txt**](https://github.com/sanket1012/Coursera-Machine-Learning/blob/master/Excercise%202-%20Logistic%20Regression/ex2data1.txt) from previous applicants that you can use as a training set for logistic regression. For each training example, you have the applicant's scores on two exams and the admissions decision.
 
 Your task is to build a classification model that estimates an applicant's probability of admission based the scores from those two exams.
 
