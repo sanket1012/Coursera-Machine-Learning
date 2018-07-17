@@ -19,24 +19,13 @@ Topics include:
   * Bias/variance theory
   * Innovation process in machine learning and AI
 
-This repos is for showcasing my work in Machine Learning Course condudted on Coursera and doesnot mean any substitute to that course. If required one can use this as reference to basic Machine Learning Programming in Matlab for Various ML related basics concepts implemented in Matlab
+This repos is for showcasing my work in Machine Learning Course condudted on Coursera and doesnot mean any substitute to that course. If required one can use this as reference to basic understanding of Machine Learning Programming implemented in Matlab
 
-## Machine Learning Exercise 1: Linear Regression
-------------
-This file contains code that helps you get started on the linear exercise.
-
-You will need to complete the following function in this exericse:
-
-     warmUpExercise.m
-     plotData.m
-     gradientDescent.m
-     computeCost.m
-     gradientDescentMulti.m
-     computeCostMulti.m
-     featureNormalize.m
-     normalEqn.m
-
-For this exercise, you will not need to change any code in this file, or any other files other than those mentioned above.
-
-x refers to the population size in 10,000s
-y refers to the profit in $10,000s
+Excercise 1: [Linear Regression]()
+Excercise 2: [Logistic Regression]()
+Excercise 3: [Multi-class Classification and Neural Networks]()
+Excercise 4: [Neural Networks Learning]()
+Excercise 5: [Regularized Linear Regression and Bias v.s. Variance]()
+Excercise 6: [Support Vector Machines]()
+Excercise 7: [K-means Clustering and Principal Component Analysis]()
+Excercise 8: [Anomaly Detection and Recommender Systems]()
