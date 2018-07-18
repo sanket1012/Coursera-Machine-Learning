@@ -41,7 +41,7 @@ Predict probability and computer the accuracy:
     fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
     fprintf('Expected accuracy (with lambda = 1): 83.1 (approx)\n');
 
-##  Functionsused in Linear Regression:
+##  Functions used in Linear Regression:
 
 costFunction():
 
@@ -72,12 +72,10 @@ plotData():
 
     function plotData(X, y)
       figure; hold on;
-=========================================================================
-
-==========================================================================
-
+      plot(X, y, 'rx', 'MarkerSize', 10); % Plot the data
+      ylabel('Profit in $10,000s'); % Set the y?axis label
+      xlabel('Population of City in 10,000s'); % Set the x?axis label   
       hold off;
-
     end
     
 plotDecisionBoundary():
@@ -111,5 +109,11 @@ predict():
     function p = predict(theta, X)
       m = size(X, 1); % Number of training examples
       p = zeros(m, 1);
-      
+      for i=1:m
+        if (sigmoid(X(i,:)*theta)>=0.5)
+            p(i,1)=1;
+        else
+            p(i,1)=0;
+        end
+      end
     end
