@@ -55,22 +55,25 @@ costFunction():
       m = length(y); % number of training examples
       J = 0;
       grad = zeros(size(theta));
-    =================================================================
-    
-    ==================================================================
-    
+      dim=size(theta);
+      h_theta=sigmoid(X*theta);
+      for i=1:m
+        J=J+((-y(i,1)*log(h_theta(i,1)))-(1-y(i,1))*log(1-h_theta(i,1)));
+      end
+      J=(1/m)*J;
+      for i=1:dim(1)
+        grad(i,1)=(1/m)*sum((h_theta(1:m,1)-y(1:m,1))'*X(1:m,i));
+      end
     end
     
 plotData():
 
     function plotData(X, y)
       figure; hold on;
-=========================================================================
-
-==========================================================================
-
+      plot(X, y, 'rx', 'MarkerSize', 10); % Plot the data
+      ylabel('Profit in $10,000s'); % Set the y?axis label
+      xlabel('Population of City in 10,000s'); % Set the x?axis label
       hold off;
-
     end
     
 plotDecisionBoundary():
@@ -104,9 +107,23 @@ predict():
     function p = predict(theta, X)
       m = size(X, 1); % Number of training examples
       p = zeros(m, 1);
-      
+      for i=1:m
+        if (sigmoid(X(i,:)*theta)>=0.5)
+            p(i,1)=1;
+        else
+            p(i,1)=0;
+        end
+      end
     end
     
 sigmoid():
 
-
+    function g = sigmoid(z)
+      g = zeros(size(z));
+      m=size(z);
+      for i=1:m(1)
+        for j=1:m(2)
+          g(i,j)=1/(1+exp(-z(i,j)));
+        end
+      end
+    end
