@@ -17,7 +17,7 @@ Loading and Visualising training data:
     sel = sel(1:100);
     displayData(X(sel, :));
 
-For now, load some pre-initialized neural network parameters and unr
+For now, load some pre-initialized neural network parameters and unroll them:
     
     load('ex4weights.mat');
     nn_params = [Theta1(:) ; Theta2(:)];
