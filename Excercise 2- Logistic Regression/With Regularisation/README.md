@@ -1,6 +1,6 @@
 # Logistic Regression Without Regularisation
 
-In this part of the Machine Learning, you will implement regularized logistic regression to predict whether microchips from a fabrication plant passes quality assurance (QA). During QA, each microchip goes through various tests to ensure it is functioning correctly. Suppose you are the product manager of the factory and you have the test results for some microchips on two different tests. From these two tests, you would like to determine whether the microchips should be accepted or rejected. To help you make the decision, you have a dataset [**ex2data2.txt**]() of test results on past microchips, from which you can build a logistic regression model.
+In this part of the Machine Learning, you will implement regularized logistic regression to predict whether microchips from a fabrication plant passes quality assurance (QA). During QA, each microchip goes through various tests to ensure it is functioning correctly. Suppose you are the product manager of the factory and you have the test results for some microchips on two different tests. From these two tests, you would like to determine whether the microchips should be accepted or rejected. To help you make the decision, you have a dataset [**ex2data2.txt**](https://github.com/sanket1012/Coursera-Machine-Learning/blob/master/Excercise%202-%20Logistic%20Regression/With%20Regularisation/ex2data2.txt) of test results on past microchips, from which you can build a logistic regression model.
 
 Your task is to build a classification model that estimates an applicant's probability of admission based the scores from those two exams.
 
@@ -43,39 +43,49 @@ Predict probability and computer the accuracy:
 
 ##  Functions used in Linear Regression:
 
-costFunction():
+mapFeature():
+
+    function out = mapFeature(X1, X2)
+        degree = 6;
+        out = ones(size(X1(:,1)));
+        for i = 1:degree
+            for j = 0:i
+                out(:, end+1) = (X1.^(i-j)).*(X2.^j);
+            end
+        end
+    end
+
+costFunctionReg():
 
     function [J, grad] = costFunctionReg(theta, X, y, lambda)
-      m = length(y); % number of training examples
-      J = 0;
-      J1=0;
-      grad = zeros(size(theta));
-      dim=size(theta);
-      h_theta=sigmoid(X*theta);
-      for i=1:m
-        J=J+((-y(i,1)*log(h_theta(i,1)))-(1-y(i,1))*log(1-h_theta(i,1)));
-      end
-
-      for j=1:dim(1)
-        J1=(lambda/2)*(theta(j,1))^2;
-      end
-      J=(1/m)*(J+J1);
-      
-      i=1;
-      grad(i,1)=(1/m)*sum((h_theta(1:m,1)-y(1:m,1))'*X(1:m,i));
-      for i=2:dim(1)
-        grad(i,1)=((1/m)*sum((h_theta(1:m,1)-y(1:m,1))'*X(1:m,i)))+(lambda/m)*theta(i,1);
-      end
+        m = length(y); % number of training examples
+        J = 0;
+        J1=0;
+        grad = zeros(size(theta));
+        dim=size(theta);
+        h_theta=sigmoid(X*theta);
+        for i=1:m
+            J=J+((-y(i,1)*log(h_theta(i,1)))-(1-y(i,1))*log(1-h_theta(i,1)));
+        end
+        for j=1:dim(1)
+            J1=(lambda/2)*(theta(j,1))^2;
+        end
+        J=(1/m)*(J+J1);
+        i=1;
+        grad(i,1)=(1/m)*sum((h_theta(1:m,1)-y(1:m,1))'*X(1:m,i));
+        for i=2:dim(1)
+            grad(i,1)=((1/m)*sum((h_theta(1:m,1)-y(1:m,1))'*X(1:m,i)))+(lambda/m)*theta(i,1);
+        end
     end
 
 plotData():
 
     function plotData(X, y)
-      figure; hold on;
-      plot(X, y, 'rx', 'MarkerSize', 10); % Plot the data
-      ylabel('Profit in $10,000s'); % Set the y?axis label
-      xlabel('Population of City in 10,000s'); % Set the x?axis label   
-      hold off;
+        figure; hold on;
+        plot(X, y, 'rx', 'MarkerSize', 10); % Plot the data
+        ylabel('Profit in $10,000s'); % Set the y?axis label
+        xlabel('Population of City in 10,000s'); % Set the x?axis label   
+        hold off;
     end
     
 plotDecisionBoundary():
