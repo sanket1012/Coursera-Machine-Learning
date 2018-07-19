@@ -88,3 +88,46 @@ Compare to the original input, which is also displayed:
     displayData(X_rec(1:100,:));
     title('Recovered faces');
     axis square;
+
+## Functions used in the above code:
+
+featureNormalize():
+
+    function [X_norm, mu, sigma] = featureNormalize(X)
+        mu = mean(X);
+        X_norm = bsxfun(@minus, X, mu);
+        sigma = std(X_norm);
+        X_norm = bsxfun(@rdivide, X_norm, sigma);
+    end
+
+pca():
+
+    function [U, S] = pca(X)
+        [m, n] = size(X);
+        U = zeros(n);
+        S = zeros(n);
+        cov=(1/m)*(X'*X);
+        [U,S,V]=svd(cov);
+    end
+
+projectData():
+
+    function Z = projectData(X, U, K)
+        Z = zeros(size(X, 1), K);
+        Z=X*U(:,1:K);
+    end
+
+recoverData():
+
+    function X_rec = recoverData(Z, U, K)
+        X_rec = zeros(size(Z, 1), size(U, 1));
+        for i=1:size(Z,1)
+            for j=1:size(U,1)
+                X_rec(i,j)=Z(i,:)*U(j,1:K)';
+            end
+        end
+    end
+
+displayData(): Same as shown [here](https://github.com/sanket1012/Coursera-Machine-Learning/blob/master/Excercise%203-%20Multi-class%20Classification%20and%20Neural%20Networks/Logistic%20Regression/README.md)
+
+
