@@ -1,5 +1,5 @@
 
-# Principle Component Analysis and K-Means Clustering
+# K-Means Clustering
 
 To implement K-Means, we will perform two steps in the learning algorithm; findClosestCentroids and computeCentroids.
 
