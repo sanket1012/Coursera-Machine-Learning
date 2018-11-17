@@ -19,7 +19,7 @@ Topics include:
   * Bias/variance theory
   * Innovation process in machine learning and AI
 
-This repos is for showcasing my work in Machine Learning Course conducted by Coursera and doesnot mean any substitute to that course. If required one can use this as reference to basic understanding of Machine Learning Programming implemented in Matlab
+This repository is for showcasing my work in Machine Learning Course conducted by Coursera and doesnot mean any substitute to that course. If required one can use this as reference to basic understanding of Machine Learning Programming implemented in Matlab
 
 Excercise 1: [Linear Regression](https://github.com/sanket1012/Coursera-Machine-Learning/tree/master/Excercise%201-%20Linear%20Regression)  
 Excercise 2: [Logistic Regression](https://github.com/sanket1012/Coursera-Machine-Learning/tree/master/Excercise%202-%20Logistic%20Regression)  
